@@ -42,7 +42,41 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
             ),
           ),
           Expanded(child: Container(
-            color: Colors.yellow,
+            child: BmiCard(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "HEIGHT",
+                    style: labelTextStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "182",
+                        style: TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white
+                        ),
+                      ),
+                      Text(
+                        "cm",
+                        style: labelTextStyle,
+                      ),
+                    ],
+                  ),
+                  Slider(
+                    value: 100,
+                    min: 80,
+                    max: 200,
+                    onChanged: (value) {}
+                  ),
+                ],
+              ),
+            ),
           )),
           Expanded(child: Container(
             color: Colors.green,
