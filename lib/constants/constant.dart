@@ -5,7 +5,14 @@ TextStyle genderTextStyle = const TextStyle(
   fontSize: 18, 
   color: Color(0xff8d8e98)
 );
+
 TextStyle labelTextStyle = const TextStyle(
   fontSize: 18,
+  color: Colors.white
+);
+
+TextStyle numberTextStyle = const TextStyle(
+  fontSize: 50,
+  fontWeight: FontWeight.bold,
   color: Colors.white
 );
