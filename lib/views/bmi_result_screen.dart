@@ -18,10 +18,9 @@ class BmiResultScreen extends StatelessWidget {
                 child: Text(
                   "Hasil Perhitungan",
                   style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white
-                  ),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ),
             ),
@@ -30,36 +29,31 @@ class BmiResultScreen extends StatelessWidget {
             flex: 5,
             child: BmiCard(
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15.0
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
                       "Normal",
                       style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                      ),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                     Text(
                       "18.3",
                       style: TextStyle(
-                        fontSize: 100,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                      ),
+                          fontSize: 100,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                     Text(
                       "Your BMI result is quite low, you should eat more",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white
-                      ),
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                   ],
                 ),
@@ -67,22 +61,21 @@ class BmiResultScreen extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
             },
             child: Container(
               height: 80,
               color: Color(0xffEC3C66),
               child: Center(
-                child: Text(
-                  "Hitung Ulang",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                )
-              ),
+                  child: Text(
+                "Hitung Ulang",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              )),
             ),
           )
         ],

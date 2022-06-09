@@ -10,7 +10,6 @@ class BmiDataScreen extends StatefulWidget {
 }
 
 class _BmiDataScreenState extends State<BmiDataScreen> {
-  
   int height = 100;
   int weight = 50;
   int age = 20;
@@ -46,7 +45,8 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
               ],
             ),
           ),
-          Expanded(child: Container(
+          Expanded(
+              child: Container(
             child: BmiCard(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -81,12 +81,9 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                     max: 200,
                     thumbColor: Colors.red,
                     activeColor: Colors.white,
-
                     onChanged: (value) {
                       height = value.toInt();
-                      setState(() {
-                        
-                      });
+                      setState(() {});
                     },
                   ),
                 ],
@@ -122,7 +119,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                                 elevation: 0,
                                 child: Icon(
                                   Icons.add,
-                                  color: Colors.white
+                                  color: Colors.white,
                                 ),
                                 shape: CircleBorder(),
                                 fillColor: Color(0xff212747),
@@ -180,7 +177,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                                 elevation: 0,
                                 child: Icon(
                                   Icons.add,
-                                  color: Colors.white
+                                  color: Colors.white,
                                 ),
                                 shape: CircleBorder(),
                                 fillColor: Color(0xff212747),
@@ -218,7 +215,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
             ),
           ),
           GestureDetector(
-            onTap: (){
+            onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: ((context) {
@@ -238,19 +235,20 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
-                )
+                ),
               ),
             ),
           )
         ],
-      ),      
+      ),
     );
   }
 }
 
 class BmiCard extends StatelessWidget {
   const BmiCard({
-    Key? key, this.child,
+    Key? key,
+    this.child,
   }) : super(key: key);
 
   final Widget? child;
@@ -259,9 +257,7 @@ class BmiCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFF272a4e),
-        borderRadius: BorderRadius.circular(15)
-      ),
+          color: Color(0xFF272a4e), borderRadius: BorderRadius.circular(15)),
       margin: EdgeInsets.all(15),
       child: child,
     );
@@ -270,7 +266,7 @@ class BmiCard extends StatelessWidget {
 
 class GenderIconText extends StatelessWidget {
   const GenderIconText({
-    Key? key, 
+    Key? key,
     required this.title,
     required this.icon,
   }) : super(key: key);
