@@ -10,7 +10,7 @@ class BmiResultScreen extends StatelessWidget {
 
   final double bmi;
 
-  determineBmiCategory(double bmiValue) {
+  String determineBmiCategory(double bmiValue) {
     String category = "";
 
     if (bmiValue < 16.0) {
@@ -34,8 +34,37 @@ class BmiResultScreen extends StatelessWidget {
     return category;
   }
 
+  String getHealthRiskDescription(String categoryName) {
+    String desc = "";
+
+    switch (categoryName) {
+      case (underweightSevere):
+      case (underweightModerate):
+      case (underweightMild):
+        desc = "Possible nutritional deficiency and osteoporosis";
+        break;
+      case (normal):
+        desc = "low risk (healthy range).";
+        break;
+      case (overweight):
+        desc = "moderate risk";
+        break;
+      case (obseI):
+      case (obseII):
+      case (obseIII):
+        desc = "High RIsk of developing heart disease";
+        break;
+      default:
+        desc = "ubah";
+    }
+    return desc;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final bmiCategory = determineBmiCategory(bmi);
+    final bmiDesc = getHealthRiskDescription(bmiCategory);
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Hasil Hitung BMI"),
@@ -62,9 +91,10 @@ class BmiResultScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      determineBmiCategory(bmi),
+                      bmiCategory,
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -78,7 +108,7 @@ class BmiResultScreen extends StatelessWidget {
                           color: Colors.white),
                     ),
                     Text(
-                      "Your BMI result is quite low, you should eat more",
+                      bmiDesc,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 15,
