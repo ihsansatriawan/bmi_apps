@@ -70,6 +70,7 @@ class BmiResultScreen extends StatelessWidget {
         title: const Text("Hasil Hitung BMI"),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const Expanded(
             child: Center(
