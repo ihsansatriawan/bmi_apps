@@ -1,4 +1,5 @@
 import 'package:bmi_apps/constants/constant.dart';
+import 'package:bmi_apps/helpers/bmi_calculator.dart';
 import 'package:bmi_apps/views/bmi_data_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -62,8 +63,9 @@ class BmiResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bmiCategory = determineBmiCategory(bmi);
-    final bmiDesc = getHealthRiskDescription(bmiCategory);
+    final BmiCalculator bmiCalculator = BmiCalculator.fromBmiValue(bmi)
+    bmiCalculator.determineBmiCategory();
+    bmiCalculator.getHealthRiskDescription();
 
     return Scaffold(
       appBar: AppBar(
@@ -93,7 +95,7 @@ class BmiResultScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      bmiCategory,
+                      bmiCalculator.bmiCategory!,
                       style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -107,7 +109,7 @@ class BmiResultScreen extends StatelessWidget {
                           color: Colors.white),
                     ),
                     Text(
-                      bmiDesc,
+                      bmiCalculator.bmiDescription!,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                           fontSize: 15,

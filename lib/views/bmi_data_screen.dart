@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:bmi_apps/helpers/bmi_calculator.dart';
 import 'package:bmi_apps/views/bmi_result_screen.dart';
 import 'package:bmi_apps/constants/constant.dart';
 import 'package:flutter/material.dart';
@@ -239,10 +240,19 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
           ),
           GestureDetector(
             onTap: () {
+              final bmiCalculator = BmiCalculator(
+                height: height,
+                weight: weight,
+              );
+
+              bmiCalculator.calculateBmi();
+
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: ((context) {
-                    return BmiResultScreen(bmi: calculateBmi());
+                    return BmiResultScreen(
+                      bmi: bmiCalculator.bmi!,
+                    );
                   }),
                 ),
               );
