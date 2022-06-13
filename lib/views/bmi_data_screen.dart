@@ -18,13 +18,6 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
   int age = 20;
   String? gender;
 
-  double calculateBmi() {
-    double heightInMeter = height / 100;
-    double bmi = weight / pow(heightInMeter, 2);
-
-    return bmi;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -259,7 +252,7 @@ class _BmiDataScreenState extends State<BmiDataScreen> {
             },
             child: Container(
               height: 80,
-              color: const Color(0xffEC3C66),
+              color: Color.fromARGB(255, 13, 110, 83),
               child: const Center(
                 child: Text(
                   "Hitung BMI",

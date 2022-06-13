@@ -77,16 +77,17 @@ class BmiResultScreen extends StatelessWidget {
             },
             child: Container(
               height: 80,
-              color: const Color(0xffEC3C66),
+              color: Color.fromARGB(255, 13, 110, 83),
               child: const Center(
-                  child: Text(
-                "Hitung Ulang",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                child: Text(
+                  "Hitung Ulang",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-              )),
+              ),
             ),
           )
         ],
